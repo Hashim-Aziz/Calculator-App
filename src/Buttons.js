@@ -4,7 +4,7 @@ const Buttons = () => {
   return (
     <>
       <div className="div-bg">
-        <button className="btn mg-lft">History</button>
+        <button className="btn his-btn mg-lft">HISTORY</button>
       </div>
       <div className="div-bg">
         <button className="btn mg-top bg-gray mg-lft">(</button>

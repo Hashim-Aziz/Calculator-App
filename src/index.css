@@ -38,7 +38,8 @@ code {
 }
 .btn {
   width: 23%;
-  padding: 25px;
+  padding: 33px;
+  cursor: pointer;
 }
 .bg-gray {
   background-color: #d6d6d6;
@@ -73,4 +74,11 @@ code {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: white;
+}
+
+.his-btn {
+  color: #3da4ab;
+  border: none;
+  background: white;
+  font-weight: bold;
 }
