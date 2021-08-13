@@ -5,8 +5,9 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [input, setInput] = useState(0);
   const [formulaDisplay, setFormulaDisplay] = useState("");
+
   return (
-    <AppContext.Provider value={{ input, formulaDisplay }}>
+    <AppContext.Provider value={{ input, formulaDisplay, setInput }}>
       {children}
     </AppContext.Provider>
   );

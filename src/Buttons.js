@@ -1,6 +1,12 @@
 import React from "react";
+import { useGlobalContext } from "./context";
 
 const Buttons = () => {
+  const { setInput } = useGlobalContext();
+
+  const clickHandler = (e) => {
+    console.log(e.target.innerText);
+  };
   return (
     <>
       <div className="div-bg">
@@ -13,7 +19,9 @@ const Buttons = () => {
         <button className="btn bg-red mg-lft">AC</button>
       </div>
       <div className="div-bg">
-        <button className="btn mg-top mg-lft">7</button>
+        <button className="btn mg-top mg-lft" onClick={clickHandler}>
+          7
+        </button>
         <button className="btn mg-lft">8</button>
         <button className="btn mg-lft">9</button>
         <button className="btn bg-gray mg-lft">/</button>
