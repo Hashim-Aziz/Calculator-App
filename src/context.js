@@ -3,8 +3,10 @@ import React, { useState, useContext, useEffect } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
+  const [input, setInput] = useState(0);
+  const [formulaDisplay, setFormulaDisplay] = useState("");
   return (
-    <AppContext.Provider value="hello from context">
+    <AppContext.Provider value={{ input, formulaDisplay }}>
       {children}
     </AppContext.Provider>
   );

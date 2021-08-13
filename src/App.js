@@ -1,13 +1,16 @@
 import React from "react";
 import Buttons from "./Buttons";
+import { useGlobalContext } from "./context";
 
 function App() {
+  const { input, formulaDisplay } = useGlobalContext();
+
   return (
     <section>
       <div className="calculator">
         <div className="center">
           <input type="text" className="formula-display" />
-          <input type="text" className="input-display " value="0" />
+          <input type="text" className="input-display " placeholder={input} />
           <Buttons />
         </div>
       </div>
