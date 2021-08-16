@@ -6,6 +6,7 @@ const Buttons = () => {
 
   const clickHandler = (e) => {
     console.log(e.target.innerText);
+    const 
   };
   return (
     <>
