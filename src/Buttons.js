@@ -2,11 +2,15 @@ import React from "react";
 import { useGlobalContext } from "./context";
 
 const Buttons = () => {
-  const { setInput } = useGlobalContext();
+  const { changeInput } = useGlobalContext();
 
   const clickHandler = (e) => {
     console.log(e.target.innerText);
-    const 
+    const number = parseInt(e.target.innerText);
+    console.log(Number(number) === NaN);
+    if (Number(number) !== NaN) {
+      changeInput(number);
+    }
   };
   return (
     <>
@@ -23,24 +27,42 @@ const Buttons = () => {
         <button className="btn mg-top mg-lft" onClick={clickHandler}>
           7
         </button>
-        <button className="btn mg-lft">8</button>
-        <button className="btn mg-lft">9</button>
+        <button className="btn mg-lft" onClick={clickHandler}>
+          8
+        </button>
+        <button className="btn mg-lft" onClick={clickHandler}>
+          9
+        </button>
         <button className="btn bg-gray mg-lft">/</button>
       </div>
       <div className="div-bg">
-        <button className="btn mg-top mg-lft">4</button>
-        <button className="btn mg-lft">5</button>
-        <button className="btn mg-lft">6</button>
+        <button className="btn mg-top mg-lft" onClick={clickHandler}>
+          4
+        </button>
+        <button className="btn mg-lft" onClick={clickHandler}>
+          5
+        </button>
+        <button className="btn mg-lft" onClick={clickHandler}>
+          6
+        </button>
         <button className="btn bg-gray mg-lft">*</button>
       </div>
       <div className="div-bg">
-        <button className="btn mg-top mg-lft">1</button>
-        <button className="btn mg-lft">2</button>
-        <button className="btn mg-lft">3</button>
+        <button className="btn mg-top mg-lft" onClick={clickHandler}>
+          1
+        </button>
+        <button className="btn mg-lft" onClick={clickHandler}>
+          2
+        </button>
+        <button className="btn mg-lft" onClick={clickHandler}>
+          3
+        </button>
         <button className="btn bg-gray mg-lft">-</button>
       </div>
       <div className="div-bg">
-        <button className="btn mg-top mg-lft">0</button>
+        <button className="btn mg-top mg-lft" onClick={clickHandler}>
+          0
+        </button>
         <button className="btn mg-lft">.</button>
         <button className="btn mg-lft bg-bluish">=</button>
         <button className="btn bg-gray mg-lft">+</button>

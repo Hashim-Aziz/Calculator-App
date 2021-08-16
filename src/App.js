@@ -10,7 +10,12 @@ function App() {
       <div className="calculator">
         <div className="center">
           <input type="text" className="formula-display" />
-          <input type="text" className="input-display " placeholder={input} />
+          <input
+            type="text"
+            className="input-display "
+            placeholder="0"
+            value={input}
+          />
           <Buttons />
         </div>
       </div>
