@@ -9,7 +9,11 @@ function App() {
     <section>
       <div className="calculator">
         <div className="center">
-          <input type="text" className="formula-display" />
+          <input
+            type="text"
+            className="formula-display"
+            value={formulaDisplay}
+          />
           <input
             type="text"
             className="input-display "

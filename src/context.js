@@ -11,8 +11,21 @@ const AppProvider = ({ children }) => {
     setInput(newInput);
   };
 
+  const applyOperator = (opt) => {
+    let formulaValue;
+    if (input === "") {
+      formulaValue = 0;
+    }
+    if (input !== "") {
+      formulaValue = formulaDisplay + input;
+    }
+    setFormulaDisplay(formulaValue);
+  };
+
   return (
-    <AppContext.Provider value={{ input, formulaDisplay, changeInput }}>
+    <AppContext.Provider
+      value={{ input, formulaDisplay, changeInput, applyOperator }}
+    >
       {children}
     </AppContext.Provider>
   );
