@@ -30,8 +30,15 @@ const AppProvider = ({ children }) => {
     if (input !== "") {
       formulaValue = formulaDisplay + input;
     }
+
     setFormulaDisplay(formulaValue);
     changeInput(opt);
+
+    if (opt == "=") {
+      const result = eval(formulaValue);
+      console.log(eval(result));
+      setInput(result);
+    }
   };
 
   return (
