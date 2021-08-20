@@ -7,7 +7,18 @@ const AppProvider = ({ children }) => {
   const [formulaDisplay, setFormulaDisplay] = useState("");
 
   const changeInput = (value) => {
-    const newInput = input + "" + value;
+    let newInput = input + "" + value;
+
+    if (isNaN(value)) {
+      newInput = value;
+    }
+
+    if (isNaN(input)) {
+      const newFormulaValue = formulaDisplay + input;
+      setFormulaDisplay(newFormulaValue);
+      newInput = value;
+    }
+
     setInput(newInput);
   };
 
@@ -20,6 +31,7 @@ const AppProvider = ({ children }) => {
       formulaValue = formulaDisplay + input;
     }
     setFormulaDisplay(formulaValue);
+    changeInput(opt);
   };
 
   return (

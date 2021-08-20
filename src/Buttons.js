@@ -10,11 +10,13 @@ const Buttons = () => {
 
     if (isNaN(input)) {
       console.log(input);
+      applyOperator(input);
     }
     if (!isNaN(input)) {
       changeInput(input);
     }
   };
+
   return (
     <>
       <div className="div-bg">

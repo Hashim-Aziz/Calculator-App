@@ -17,6 +17,8 @@ code {
   height: 200px;
   width: 100%;
   border: none;
+  text-align: right;
+  font-size: xx-large;
 }
 .input-display {
   display: flex;
