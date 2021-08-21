@@ -39,6 +39,10 @@ const AppProvider = ({ children }) => {
       console.log(eval(result));
       setInput(result);
     }
+    if (opt == "AC") {
+      setInput("");
+      setFormulaDisplay("");
+    }
   };
 
   return (
