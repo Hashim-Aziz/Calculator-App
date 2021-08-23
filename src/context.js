@@ -5,7 +5,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [formulaDisplay, setFormulaDisplay] = useState("");
-  var stringMath = require("string-math");
+  var stringMath = require("string-math"); // for reference see : https://www.npmjs.com/package/string-math
 
   const changeInput = (value) => {
     let newInput = input + "" + value;
