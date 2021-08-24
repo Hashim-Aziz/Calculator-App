@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [formulaDisplay, setFormulaDisplay] = useState("");
+  const [history, setHistory] = useState([]);
   var stringMath = require("string-math"); // for reference see : https://www.npmjs.com/package/string-math
 
   const changeInput = (value) => {
@@ -47,7 +48,13 @@ const AppProvider = ({ children }) => {
     if (opt == "=") {
       const result = stringMath(formulaValue); //eval(formulaValue);
       //console.log(eval(result));
-      console.log(result);
+      // const newHistory = formulaValue + "=" + result;
+      let newHistory = history;
+
+      newHistory.push(formulaValue + "=" + result);
+
+      setHistory(newHistory);
+      console.log(newHistory);
 
       setInput(result);
     }
