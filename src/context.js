@@ -24,15 +24,6 @@ const AppProvider = ({ children }) => {
     setInput(newInput);
   };
 
-  const compute = (str = "") => {
-    let total = 0;
-    str = str.match(/[+\−]*(\.\d+|\d+(\.\d+)?)/g) || [];
-    while (str.length) {
-      total += parseFloat(str.shift());
-    }
-    return total;
-  };
-
   const applyOperator = (opt) => {
     let formulaValue;
     if (input === "") {
@@ -46,9 +37,7 @@ const AppProvider = ({ children }) => {
     changeInput(opt);
 
     if (opt == "=") {
-      const result = stringMath(formulaValue); //eval(formulaValue);
-      //console.log(eval(result));
-      // const newHistory = formulaValue + "=" + result;
+      const result = stringMath(formulaValue);
       let newHistory = history;
 
       newHistory.push(formulaValue + "=" + result);
