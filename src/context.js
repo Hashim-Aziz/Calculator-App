@@ -6,10 +6,17 @@ const AppProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [formulaDisplay, setFormulaDisplay] = useState("");
   const [history, setHistory] = useState([]);
+  const [isEqualPressed, setIsEqualPressed] = useState(false);
   var stringMath = require("string-math"); // for reference see : https://www.npmjs.com/package/string-math
 
   const changeInput = (value) => {
-    let newInput = input + "" + value;
+    if (isEqualPressed) {
+      setFormulaDisplay("");
+    }
+
+    const oldInputValue = isEqualPressed ? "" : input;
+
+    let newInput = oldInputValue + "" + value;
 
     if (isNaN(value)) {
       newInput = value;
@@ -22,6 +29,7 @@ const AppProvider = ({ children }) => {
     }
 
     setInput(newInput);
+    setIsEqualPressed(false);
   };
 
   const applyOperator = (opt) => {
@@ -46,6 +54,7 @@ const AppProvider = ({ children }) => {
       console.log(newHistory);
 
       setInput(result);
+      setIsEqualPressed(true);
     }
     if (opt == "AC") {
       setInput("");
