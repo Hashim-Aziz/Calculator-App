@@ -14,7 +14,7 @@ const AppProvider = ({ children }) => {
       setFormulaDisplay("");
     }
 
-    const oldInputValue = isEqualPressed ? "" : input;
+    const oldInputValue = isEqualPressed ? "" : input; // for empty all field on pressed any button if '=' is pressed just before the key pressed
 
     let newInput = oldInputValue + "" + value;
 
@@ -46,12 +46,11 @@ const AppProvider = ({ children }) => {
 
     if (opt == "=") {
       const result = stringMath(formulaValue);
+
+      // add previous equation in history when '=' pressed
       let newHistory = history;
-
       newHistory.push(formulaValue + "=" + result);
-
       setHistory(newHistory);
-      console.log(newHistory);
 
       setInput(result);
       setIsEqualPressed(true);
