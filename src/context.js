@@ -7,7 +7,28 @@ const AppProvider = ({ children }) => {
   const [formulaDisplay, setFormulaDisplay] = useState("");
   const [history, setHistory] = useState([]);
   const [isEqualPressed, setIsEqualPressed] = useState(false);
+  const [isHistoryDisplay, setIsHistoryDisplay] = useState(false);
   var stringMath = require("string-math"); // for reference see : https://www.npmjs.com/package/string-math
+
+  const handleDisplayHistory = () => {
+    let historyvalue = isHistoryDisplay == true ? false : true;
+    console.log("isHistoryDisplay ", historyvalue);
+    setFormulaDisplay("");
+    setIsHistoryDisplay(historyvalue);
+  };
+
+  const historyDisplay = () => {
+    console.log("hello  historyDisplay");
+
+    if (isHistoryDisplay) {
+      setFormulaDisplay("");
+      console.log("history display button");
+    }
+  };
+
+  useEffect(() => {
+    historyDisplay();
+  }, [isHistoryDisplay]);
 
   const changeInput = (value) => {
     if (isEqualPressed) {
@@ -63,7 +84,13 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ input, formulaDisplay, changeInput, applyOperator }}
+      value={{
+        input,
+        formulaDisplay,
+        changeInput,
+        applyOperator,
+        handleDisplayHistory,
+      }}
     >
       {children}
     </AppContext.Provider>

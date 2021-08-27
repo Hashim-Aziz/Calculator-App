@@ -2,7 +2,11 @@ import React from "react";
 import { useGlobalContext } from "./context";
 
 const Buttons = () => {
-  const { changeInput, applyOperator } = useGlobalContext();
+  const {
+    changeInput,
+    applyOperator,
+    handleDisplayHistory,
+  } = useGlobalContext();
 
   const clickHandler = (e) => {
     //console.log(e.target.innerText);
@@ -17,10 +21,17 @@ const Buttons = () => {
     }
   };
 
+  const historyHandler = (e) => {
+    e.preventDefault();
+    handleDisplayHistory();
+  };
+
   return (
     <>
       <div className="div-bg">
-        <button className="btn his-btn mg-lft">HISTORY</button>
+        <button className="btn his-btn mg-lft" onClick={historyHandler}>
+          HISTORY
+        </button>
       </div>
       <div className="div-bg">
         <button className="btn mg-top bg-gray mg-lft" onClick={clickHandler}>
