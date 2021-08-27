@@ -12,11 +12,13 @@ function App() {
           <input
             type="text"
             className="formula-display"
+            disabled
             value={formulaDisplay}
           />
           <input
             type="text"
             className="input-display "
+            disabled
             placeholder="0"
             value={input}
           />
