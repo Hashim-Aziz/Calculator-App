@@ -12,17 +12,13 @@ const AppProvider = ({ children }) => {
 
   const handleDisplayHistory = () => {
     let historyvalue = isHistoryDisplay == true ? false : true;
-    console.log("isHistoryDisplay ", historyvalue);
     setFormulaDisplay("");
     setIsHistoryDisplay(historyvalue);
   };
 
   const historyDisplay = () => {
-    console.log("hello  historyDisplay");
-
     if (isHistoryDisplay) {
       setFormulaDisplay("");
-      console.log("history display button");
     }
   };
 
