@@ -3,7 +3,40 @@ import Buttons from "./Buttons";
 import { useGlobalContext } from "./context";
 
 function App() {
-  const { input, formulaDisplay } = useGlobalContext();
+  const {
+    input,
+    formulaDisplay,
+    isHistoryDisplay,
+    history,
+  } = useGlobalContext();
+
+  if (isHistoryDisplay) {
+    return (
+      <section>
+        <div className="calculator">
+          <div className="center">
+            <div className="formula-display history" disabled>
+              {history.map((item, index) => {
+                return (
+                  <p key={index} disabled>
+                    {item}
+                  </p>
+                );
+              })}
+            </div>
+            <input
+              type="text"
+              className="input-display "
+              disabled
+              placeholder="0"
+              value={input}
+            />
+            <Buttons />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section>

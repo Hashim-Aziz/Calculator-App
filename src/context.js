@@ -86,6 +86,8 @@ const AppProvider = ({ children }) => {
         changeInput,
         applyOperator,
         handleDisplayHistory,
+        isHistoryDisplay,
+        history,
       }}
     >
       {children}

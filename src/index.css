@@ -84,3 +84,8 @@ code {
   background: white;
   font-weight: bold;
 }
+
+.history {
+  max-height: 200px;
+  overflow: auto;
+}
