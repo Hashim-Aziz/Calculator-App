@@ -7,7 +7,7 @@ const AppProvider = ({ children }) => {
   const [formulaDisplay, setFormulaDisplay] = useState("");
   const [history, setHistory] = useState([]);
   const [isEqualPressed, setIsEqualPressed] = useState(false);
-  const [isHistoryDisplay, setIsHistoryDisplay] = useState(false);
+  const [isHistoryDisplay, setIsHistoryDisplay] = useState(false); //use for toggle history display
   var stringMath = require("string-math"); // for reference see : https://www.npmjs.com/package/string-math
 
   const handleDisplayHistory = () => {

@@ -9,7 +9,6 @@ const Buttons = () => {
   } = useGlobalContext();
 
   const clickHandler = (e) => {
-    //console.log(e.target.innerText);
     let input = e.target.innerText;
 
     if (isNaN(input)) {
@@ -21,6 +20,7 @@ const Buttons = () => {
     }
   };
 
+  //handle history
   const historyHandler = (e) => {
     e.preventDefault();
     handleDisplayHistory();

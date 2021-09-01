@@ -10,6 +10,7 @@ function App() {
     history,
   } = useGlobalContext();
 
+  //for display history section
   if (isHistoryDisplay) {
     return (
       <section>
