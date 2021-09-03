@@ -11,7 +11,7 @@ const AppProvider = ({ children }) => {
   var stringMath = require("string-math"); // for reference see : https://www.npmjs.com/package/string-math
 
   const handleDisplayHistory = () => {
-    let historyvalue = isHistoryDisplay == true ? false : true;
+    let historyvalue = isHistoryDisplay == true ? false : true; // for toggle history display
     setFormulaDisplay("");
     setIsHistoryDisplay(historyvalue);
   };
