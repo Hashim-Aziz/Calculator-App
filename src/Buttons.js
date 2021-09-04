@@ -8,6 +8,7 @@ const Buttons = () => {
     handleDisplayHistory,
   } = useGlobalContext();
 
+  //handle all buttons except  history
   const clickHandler = (e) => {
     let input = e.target.innerText;
 

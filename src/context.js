@@ -72,6 +72,7 @@ const AppProvider = ({ children }) => {
       setInput(result);
       setIsEqualPressed(true);
     }
+    //empty all things when AC press
     if (opt == "AC") {
       setInput("");
       setFormulaDisplay("");
