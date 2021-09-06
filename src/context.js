@@ -62,7 +62,7 @@ const AppProvider = ({ children }) => {
     changeInput(opt);
 
     if (opt == "=") {
-      const result = stringMath(formulaValue);
+      const result = stringMath(formulaValue); // use string-math library to convert string to math equation and return result
 
       // add previous equation in history when '=' pressed
       let newHistory = history;
